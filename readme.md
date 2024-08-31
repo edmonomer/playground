@@ -8,6 +8,13 @@ It allows users to open the side panel by clicking on the [action icon](https://
 2. Contentscript include conditional examining data to take different action 
 3. Contentscript send message to service worker to trigger notification when complete via chrome.runtime.sendMessage.
 
+```seq
+Sidepanel Textarea->Content Page: chrome.tabs.sendMessage 
+Note right of Sidepanel Textarea: Storage.local
+Content Page--> Service Worker: chrome.runtime.sendMessage 
+Note right of Content Page: Complete! \n Trigger notification
+```
+
 ## Running this extension
 
 1. Clone this repository.
